@@ -14,3 +14,27 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/Hello', function (){
+   echo "Hello there!";
+});
+
+//Route::get('/series', function (){
+//
+//    $series = [
+//       'Arcane',
+//       'Lost',
+//       'Loky'
+//   ];
+//
+//   $html = "<ul>";
+//   foreach ($series as $serie){
+//       $html .= "<li>$serie</li>";
+//   }
+//   $html .= "</ul>";
+//
+//   return $html;
+//});
+
+Route::get('/series', 'SeriesController@index');
+
