@@ -7,28 +7,47 @@ use Illuminate\Http\Request;
 class SeriesController extends Controller
 {
 
+//    public function index(Request $request){
+//
+//        echo $request->url();
+//        echo "</br>";
+//        echo $request->query('teste');
+//        echo "</br>";
+//        var_dump($request->query());
+//
+//
+//        $series = [
+//            'Arcane',
+//            'Lost',
+//            'Loky'
+//        ];
+//
+//        $html = "<ul>";
+//        foreach ($series as $serie){
+//            $html .= "<li>$serie</li>";
+//        }
+//        $html .= "</ul>";
+//
+//        return $html;
+//    }
+
     public function index(Request $request){
-
-        echo $request->url();
-        echo "</br>";
-        echo $request->query('teste');
-        echo "</br>";
-        var_dump($request->query());
-
-        exit();
 
         $series = [
             'Arcane',
-            'Lost',
+            'Mr. root',
             'Loky'
         ];
 
-        $html = "<ul>";
-        foreach ($series as $serie){
-            $html .= "<li>$serie</li>";
-        }
-        $html .= "</ul>";
+//        return view('series.index', [
+//            'series' => $series
+//        ]);
 
-        return $html;
+        return view('series.index', compact('series'));
+    }
+
+    public function create()
+    {
+        return view('series.create');
     }
 }
