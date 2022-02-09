@@ -11,31 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/Hello', function (){
-   echo "Hello there!";
-});
-
-//Route::get('/series', function (){
-//
-//    $series = [
-//       'Arcane',
-//       'Lost',
-//       'Loky'
-//   ];
-//
-//   $html = "<ul>";
-//   foreach ($series as $serie){
-//       $html .= "<li>$serie</li>";
-//   }
-//   $html .= "</ul>";
-//
-//   return $html;
-//});
-
 Route::get('/series', 'SeriesController@index')->name('listar_series');
 Route::get('/series/criar', 'SeriesController@create')->name('form_criar_serie');
 Route::post('/series/criar', 'SeriesController@store');
